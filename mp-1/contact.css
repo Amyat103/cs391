@@ -1,5 +1,8 @@
+html,
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 header {
@@ -34,4 +37,38 @@ nav {
   font-size: 20px;
   font-weight: bold;
   color: white;
+}
+
+footer {
+  text-align: center;
+  background-color: brown;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(104, 214, 236);
+}
+
+@media screen and (max-width: 750px) {
+  .body-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .project-list {
+    width: 100%;
+  }
 }
