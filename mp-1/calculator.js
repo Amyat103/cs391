@@ -8,6 +8,11 @@ function add() {
   if (validNum(inputOne) && validNum(inputTwo)) {
     const ans = parseFloat(inputOne) + parseFloat(inputTwo);
     output.innerHTML = ans;
+    if (ans < 0) {
+      output.style.color = 'red';
+    } else {
+      output.style.color = 'black';
+    }
   } else {
     output.innerHTML = 'Invalid Input';
   }
@@ -21,6 +26,11 @@ function minus() {
   if (validNum(inputOne) && validNum(inputTwo)) {
     const ans = parseFloat(inputOne) - parseFloat(inputTwo);
     output.innerHTML = ans;
+    if (ans < 0) {
+      output.style.color = 'red';
+    } else {
+      output.style.color = 'black';
+    }
   } else {
     output.innerHTML = 'Invalid Input';
   }
@@ -34,6 +44,11 @@ function multiply() {
   if (validNum(inputOne) && validNum(inputTwo)) {
     const ans = parseFloat(inputOne) * parseFloat(inputTwo);
     output.innerHTML = ans;
+    if (ans < 0) {
+      output.style.color = 'red';
+    } else {
+      output.style.color = 'black';
+    }
   } else {
     output.innerHTML = 'Invalid Input';
   }
@@ -47,6 +62,11 @@ function divide() {
   if (validNum(inputOne) && validNum(inputTwo)) {
     const ans = parseFloat(inputOne) / parseFloat(inputTwo);
     output.innerHTML = ans;
+    if (ans < 0) {
+      output.style.color = 'red';
+    } else {
+      output.style.color = 'black';
+    }
   } else {
     output.innerHTML = 'Invalid Input';
   }
@@ -58,8 +78,22 @@ function power() {
   const inputTwo = document.getElementById('input-two').value;
 
   if (validNum(inputOne) && validNum(inputTwo)) {
-    const ans = parseFloat(inputOne) ** parseFloat(inputTwo);
+    if (inputOne == 0) {
+      output.innerHTML = 1;
+    }
+
+    let ans = 1;
+
+    for (let i = 0; i < inputTwo; i++) {
+      ans *= inputOne;
+    }
+
     output.innerHTML = ans;
+    if (ans < 0) {
+      output.style.color = 'red';
+    } else {
+      output.style.color = 'black';
+    }
   } else {
     output.innerHTML = 'Invalid Input';
   }
