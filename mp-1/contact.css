@@ -46,7 +46,8 @@ footer {
 }
 
 body {
-  background-color: rgb(104, 214, 236);
+  margin: 0 100px;
+  background-color: white;
 }
 
 header,

@@ -1,6 +1,5 @@
 html,
 body {
-  margin: 0 20px;
   padding: 0;
   height: 100%;
 }
@@ -83,7 +82,7 @@ footer {
 }
 
 body {
-  /* background-color: rgb(104, 214, 236); */
+  margin: 0 100px;
   background-color: white;
 }
 
@@ -113,5 +112,9 @@ footer {
 
   .project-list {
     width: 100%;
+  }
+
+  .nav-list a {
+    font-size: 14px;
   }
 }

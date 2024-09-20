@@ -24,6 +24,7 @@ header {
   justify-content: center;
   height: 100%;
   height: 85vh;
+  background-color: rgb(104, 214, 236);
 }
 
 .nav-list {
@@ -68,7 +69,8 @@ footer {
 }
 
 body {
-  background-color: rgb(104, 214, 236);
+  margin: 0 100px;
+  background-color: white;
 }
 
 header,
@@ -97,5 +99,9 @@ footer {
 
   .project-list {
     width: 100%;
+  }
+
+  .nav-list a {
+    font-size: 14px;
   }
 }
