@@ -1,6 +1,6 @@
 html,
 body {
-  margin: 0;
+  margin: 0 20px;
   padding: 0;
   height: 100%;
 }
@@ -45,6 +45,7 @@ nav {
   height: 100%;
   overflow: auto;
   flex: 1;
+  background-color: rgb(104, 214, 236);
 }
 
 .project-list {
@@ -82,7 +83,13 @@ footer {
 }
 
 body {
-  background-color: rgb(104, 214, 236);
+  /* background-color: rgb(104, 214, 236); */
+  background-color: white;
+}
+
+header,
+footer {
+  color: white;
 }
 
 @media screen and (max-width: 750px) {
