@@ -21,7 +21,23 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <main></main>
+      <main>
+        <div class="calculator">
+          <label for="input-one">Input 1</label>
+          <input id="input-one" />
+          <label for="input-two">Input 2</label>
+          <input id="input-two" />
+          <br />
+          <button id="add" onclick="add()">+</button>
+          <button id="sub" onclick="minus()">-</button>
+          <button id="mul" onclick="multiply()">*</button>
+          <button id="dvd" onclick="divide()">/</button>
+          <button id="pow" onclick="power()">**</button>
+          <button id="clear" onclick="clearScreen()">Clear</button>
+        </div>
+        <h3 id="output"></h3>
+        <script src="calculator.js"></script>
+      </main>
     </div>
     <footer>All Rights Reserved by Arkar Myat</footer>
   </body>

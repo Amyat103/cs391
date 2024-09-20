@@ -56,7 +56,7 @@ nav {
 footer {
   text-align: center;
   background-color: brown;
-  height: 100%;
+  padding: 5px;
 }
 
 body {

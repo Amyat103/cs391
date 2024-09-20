@@ -51,6 +51,31 @@ nav {
 
 footer {
   text-align: center;
+  background-color: brown;
+  padding: 5px;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+}
+
+.calculator {
+  margin: 5%;
+}
+
+.calculator label {
+  display: block;
+}
+
+.calculator input {
+  width: 50%;
+  margin: 2% 0;
+}
+
+.calculator button {
+  margin: 5px 15px 5px 0;
+  padding: 10px 10px;
 }
 
 @media screen and (max-width: 750px) {
