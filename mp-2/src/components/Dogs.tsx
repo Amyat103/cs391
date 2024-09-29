@@ -23,12 +23,18 @@ const DogDiv = styled.div<{ status: string }>`
   text-align: center;
 `;
 
+const DogImage = styled.img`
+  max-height: 200px;
+`;
+
 function Dogs(props: { data: Characters[] }) {
   return (
     <AllDogsDiv>
       {props.data.map((dog) => (
-        <DogDiv key={dog.id} status={dog.status}>
+        <DogDiv key={dog.id}>
+          <h4>{dog.id}</h4>
           <h2>{dog.breed}</h2>
+          <DogImage src={dog.image} alt={dog.breed} className='dog-image' />
         </DogDiv>
       ))}
     </AllDogsDiv>

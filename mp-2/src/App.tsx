@@ -14,13 +14,26 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch('https://dog.ceo/api/breeds/image/random/10');
-      const { results }: { results: Characters[] } = await res.json();
+      const res = await fetch(
+        'https://dog.ceo/api/breed/frise/images/random/10'
+      );
+      const { message }: { message: string[] } = await res.json();
+      const results: Characters[] = [];
+
+      for (let i = 0; i < message.length; i++) {
+        const url = message[i];
+        const breed = url.split('/')[url.split('/').length - 2];
+
+        results.push({
+          id: i + 1,
+          image: url,
+          breed: breed,
+        });
+      }
+
       setData(results);
-      console.log(data);
-      console.log(res);
-      console.log(results);
     }
+
     fetchData()
       .then(() => console.log('Data fetched'))
       .catch((e: Error) => console.error('There was the error: ' + e));
