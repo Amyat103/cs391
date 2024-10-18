@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Artwork } from '../types';
 import { styled } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ArtworkPreviewDiv = styled.div`
   margin: 3rem;
@@ -12,11 +13,13 @@ const ArtworkPreviewDiv = styled.div`
 const ArtworkPreview = ({ artwork }: { artwork: Artwork }) => {
   console.log(artwork);
   return (
-    <ArtworkPreviewDiv>
-      <h2>{artwork.artist_title}</h2>
-      <p>{artwork.place_of_origin}</p>
-      <p>{artwork.date_end}</p>
-    </ArtworkPreviewDiv>
+    <Link to={`/artwork/${artwork.id}`}>
+      <ArtworkPreviewDiv>
+        <h2>{artwork.artist_title}</h2>
+        <p>{artwork.place_of_origin}</p>
+        <p>{artwork.date_end}</p>
+      </ArtworkPreviewDiv>
+    </Link>
   );
 };
 

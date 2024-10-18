@@ -2,6 +2,7 @@
 import './App.css';
 import ArtworksListContent from './components/artworks-list-content';
 import AboutPage from './components/about';
+import ArtworkContent from './components/artwork-content';
 import {
   createBrowserRouter,
   Route,
@@ -17,6 +18,7 @@ const Root = () => {
       <Routes>
         <Route path='/' element={<ArtworksListContent />} />
         <Route path='/about' element={<AboutPage />} />
+        <Route path='/artwork/:id' element={<ArtworkContent />} />
       </Routes>
     </div>
   );
