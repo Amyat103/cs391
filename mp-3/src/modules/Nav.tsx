@@ -8,7 +8,9 @@ const NavStyled = styled.nav`
   background-color: rgb(26, 111, 190);
 
   @media (max-width: 750px) {
+    flex-direction: row;
     width: 100%;
+    justify-content: space-around;
   }
 `;
 
@@ -17,28 +19,25 @@ const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100%;
+  height: 90%;
 
-  @media screen and (max-width: 750px) {
+  @media (max-width: 750px) {
     flex-direction: row;
-    justify-content: space-around;
   }
 `;
 
-const NavItem = styled.li`
+const NavLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 
-  a {
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-
-    @media screen and (max-width: 750px) {
-      font-size: 14px;
-    }
+  @media (max-width: 750px) {
+    font-size: 14px;
   }
 `;
 
@@ -46,24 +45,24 @@ export default function Nav() {
   return (
     <NavStyled>
       <NavList>
-        <NavItem>
-          <Link to='/'>Home</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/about'>About</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/education'>Education</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/experience'>Experience</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/project'>Project</Link>
-        </NavItem>
-        <NavItem>
-          <Link to='/calculator'>Calculator</Link>
-        </NavItem>
+        <li>
+          <NavLink to='/'>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to='/about'>About</NavLink>
+        </li>
+        <li>
+          <NavLink to='/education'>Education</NavLink>
+        </li>
+        <li>
+          <NavLink to='/experience'>Experience</NavLink>
+        </li>
+        <li>
+          <NavLink to='/project'>Project</NavLink>
+        </li>
+        <li>
+          <NavLink to='/calculator'>Calculator</NavLink>
+        </li>
       </NavList>
     </NavStyled>
   );

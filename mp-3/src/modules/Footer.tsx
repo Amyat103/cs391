@@ -8,9 +8,5 @@ const FooterStyled = styled.footer`
 `;
 
 export default function Footer() {
-  return (
-    <FooterStyled>
-      <h1>All Rights Reserved by Arkar Myat</h1>
-    </FooterStyled>
-  );
+  return <FooterStyled>All Rights Reserved by Arkar Myat</FooterStyled>;
 }
