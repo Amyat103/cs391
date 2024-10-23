@@ -8,12 +8,26 @@ export default function Calculator() {
   const [inputOne, setInputOne] = useState(0);
   const [inputTwo, setInputTwo] = useState(0);
   const [result, setResult] = useState(null);
+  const [resultColor, setResultColor] = useState('black');
+
+  const handleInputOneChange = (e) => {
+    setInputOne(Number(e.target.value));
+  };
+
+  const handleInputTwoChange = (e) => {
+    setInputTwo(Number(e.target.value));
+  };
 
   const add = () => {
     if (validNumber(inputOne) && validNumber(inputTwo)) {
       const ans = inputOne + inputTwo;
       setResult(ans);
-      document.getElementById('output').style.color = ans < 0 ? 'red' : 'black';
+
+      if (ans < 0) {
+        setResultColor('red');
+      } else {
+        setResultColor('black');
+      }
     } else {
       setResult('Invalid Input');
     }
@@ -23,7 +37,12 @@ export default function Calculator() {
     if (validNumber(inputOne) && validNumber(inputTwo)) {
       const ans = inputOne - inputTwo;
       setResult(ans);
-      document.getElementById('output').style.color = ans < 0 ? 'red' : 'black';
+
+      if (ans < 0) {
+        setResultColor('red');
+      } else {
+        setResultColor('black');
+      }
     } else {
       setResult('Invalid Input');
     }
@@ -33,7 +52,12 @@ export default function Calculator() {
     if (validNumber(inputOne) && validNumber(inputTwo)) {
       const ans = inputOne * inputTwo;
       setResult(ans);
-      document.getElementById('output').style.color = ans < 0 ? 'red' : 'black';
+
+      if (ans < 0) {
+        setResultColor('red');
+      } else {
+        setResultColor('black');
+      }
     } else {
       setResult('Invalid Input');
     }
@@ -43,7 +67,12 @@ export default function Calculator() {
     if (validNumber(inputOne) && validNumber(inputTwo)) {
       const ans = inputOne / inputTwo;
       setResult(ans);
-      document.getElementById('output').style.color = ans < 0 ? 'red' : 'black';
+
+      if (ans < 0) {
+        setResultColor('red');
+      } else {
+        setResultColor('black');
+      }
     } else {
       setResult('Invalid Input');
     }
@@ -53,7 +82,12 @@ export default function Calculator() {
     if (validNumber(inputOne) && validNumber(inputTwo)) {
       const ans = Math.pow(inputOne, inputTwo);
       setResult(ans);
-      document.getElementById('output').style.color = ans < 0 ? 'red' : 'black';
+
+      if (ans < 0) {
+        setResultColor('red');
+      } else {
+        setResultColor('black');
+      }
     } else {
       setResult('Invalid Input');
     }
@@ -63,10 +97,11 @@ export default function Calculator() {
     setInputOne(0);
     setInputTwo(0);
     setResult(null);
+    setResultColor('black');
   };
 
   const validNumber = (value) => {
-    return !isNaN(value) && value !== '';
+    return !isNaN(value);
   };
 
   return (
@@ -77,9 +112,19 @@ export default function Calculator() {
         <main>
           <div className='calculator'>
             <label htmlFor='input-one'>Input 1</label>
-            <input id='input-one' />
+            <input
+              id='input-one'
+              type='number'
+              value={inputOne}
+              onChange={handleInputOneChange}
+            />
             <label htmlFor='input-two'>Input 2</label>
-            <input id='input-two' />
+            <input
+              id='input-two'
+              type='number'
+              value={inputTwo}
+              onChange={handleInputTwoChange}
+            />
             <br />
             <button id='add' onClick={add}>
               +
@@ -100,8 +145,9 @@ export default function Calculator() {
               Clear
             </button>
           </div>
-          <h3 id='output'>{result}</h3>
-          <script src='calculator.js'></script>
+          <h3 id='output' style={{ color: resultColor }}>
+            Result: {result}
+          </h3>
         </main>
       </div>
       <Footer />
