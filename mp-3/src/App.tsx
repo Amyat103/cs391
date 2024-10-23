@@ -5,7 +5,7 @@ import Footer from './modules/Footer';
 import About from './modules/About';
 import Education from './modules/Education';
 import Experience from './modules/Experience';
-import Project from './modules/Project';
+import Project from './old/Project';
 import Calculator from './modules/Calculator';
 import { styled } from 'styled-components';
 import './index.css';
@@ -39,7 +39,7 @@ function App() {
   return (
     <BrowserRouter>
       <MainDiv>
-        <Header />
+        <Header Title='David Myat Resume' />
         <StyledDiv>
           <Nav />
           <MainStyled>
