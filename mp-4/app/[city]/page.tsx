@@ -2,9 +2,9 @@
 
 import { useParams } from 'next/navigation';
 import useSWR from 'swr';
-import WeatherCard from '../components/WeatherCard';
+import WeatherCard from '../components/weatherCard';
 import styled from 'styled-components';
-import { weather } from '@app/interfaces/weather';
+import { Weather } from '@app/interfaces/weather';
 
 const WeatherContentWrapper = styled.main`
   width: 80vw;
@@ -41,7 +41,7 @@ export default function CityPage() {
     <WeatherContentWrapper>
       <CityName>{params.city}</CityName>
       <WeatherCardsContainer>
-        {days.map((weather: weather, i: number) => (
+        {days.map((weather: Weather, i: number) => (
           <WeatherCard
             key={i}
             datetime={weather.datetime}

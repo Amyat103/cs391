@@ -16,7 +16,7 @@ export default function WeatherCard(props: Weather) {
   return (
     <WeatherCardWrapper className='weather-card'>
       <h2>{props.datetime}</h2>
-      <p>{props.condition}</p>
+      <p>{props.conditions}</p>
       <p>{props.description}</p>
       <p>
         {props.tempmin}°-{props.tempmax}
