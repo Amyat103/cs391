@@ -16,7 +16,7 @@ export default async function createLink(alias: string, url: string) {
   if (existing) {
     console.log('Alias exist');
 
-    return 'alias already exists';
+    return null;
   }
 
   const res = await collection.insertOne(link);
