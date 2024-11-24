@@ -25,7 +25,6 @@ export default function URLForm() {
       setError(true);
       setDisplayLink('Error frontend form, not result');
     }
-    setError(true);
   };
 
   return (
@@ -50,7 +49,11 @@ export default function URLForm() {
           placeholder='url'
         />
 
-        {error && <div className='text-red-500'>Please enter a valid URL</div>}
+        {error && (
+          <div className='text-red-500'>
+            Alias Already Exist or URL not found, Try again
+          </div>
+        )}
 
         <button onClick={handleSubmit} className='h-70px bg-sky-500 text-white'>
           Shorten
