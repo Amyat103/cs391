@@ -19,10 +19,13 @@ export default function URLForm() {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
     if (result) {
+      setError(false);
       setDisplayLink(`${baseUrl}/${alias}`);
     } else {
+      setError(true);
       setDisplayLink('Error frontend form, not result');
     }
+    setError(true);
   };
 
   return (
