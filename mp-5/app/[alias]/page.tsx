@@ -1,11 +1,11 @@
 import { redirect } from 'next/navigation';
 import getLink from '../lib/getLink';
 
-interface PageProps {
-  alias: string;
-}
-
-export default async function AliasPage({ params }: { params: PageProps }) {
+export default async function AliasPage({
+  params,
+}: {
+  params: { alias: string };
+}) {
   const url = await getLink(params.alias);
 
   if (!url) {
