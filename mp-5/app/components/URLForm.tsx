@@ -9,21 +9,26 @@ export default function URLForm() {
   const [error, setError] = useState(false);
 
   const handleSubmit = async () => {
-    console.log('Checking URL', url);
-    new URL(url);
-    console.log('URL valid');
+    try {
+      console.log('Checking URL', url);
+      new URL(url);
+      console.log('URL valid');
 
-    console.log('Calling createLink');
-    const result = await createLink(alias, url);
-    console.log('createLink result', result);
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+      console.log('Calling createLink');
+      const result = await createLink(alias, url);
+      console.log('createLink result', result);
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-    if (result) {
-      setError(false);
-      setDisplayLink(`${baseUrl}/${alias}`);
-    } else {
+      if (result) {
+        setError(false);
+        setDisplayLink(`${baseUrl}/${alias}`);
+      } else {
+        setError(true);
+        setDisplayLink('');
+      }
+    } catch {
       setError(true);
-      setDisplayLink('Error frontend form, not result');
+      setDisplayLink('');
     }
   };
 
